@@ -8,9 +8,57 @@ import java.util.Arrays;
  **/
 public class StringTest2 {
     public static void main(String[] args) {
-        String str1 = "abcdef";
+        String str = "fdsadf=dsf&sdf=sd";
+        String[] strings1 = str.split("&");
+        //[fdsadf=dsf] [sdf=sd]
+        for (String s1: strings1){
+            String[] strings2 = s1.split("=");
+            for (String s2: strings2){
+                System.out.println(s2);
+            }
+        }
+    }
+
+    public static void main9(String[] args) {
+        String str = "192-168#12";
+        String[] strings = str.split(" |-|#");//前面要加空格，不然就把每一个都拆出来了
+        for (String s: strings){
+            System.out.println(s);
+        }
+    }
+    public static void main8(String[] args) {
+        String str = "192";
+        String[] strings = str.split("");//前面要加空格，不然就把每一个都拆出来了
+        for (String s: strings){
+            System.out.println(s);
+        }
+    }
+    public static void main7(String[] args) {
+        String str = "192.168.0.12";
+        String[] strings = str.split("\\.");
+        for (String s: strings){
+            System.out.println(s);
+        }
+    }
+    public static void main6(String[] args) {
+        String str = "sda sad dd";
+        String[] strings = str.split(" ", 2);
+        for (String s: strings){
+            System.out.println(s);
+        }
+    }
+    public static void main5(String[] args) {
+        String str1 = "ababcabcdef";
         boolean flg = str1.contains("abc");
         System.out.println(flg);
+        int index = str1.indexOf("abc", 2);
+        System.out.println(index);
+        index = str1.lastIndexOf("abc", 3);
+        System.out.println(index);
+        boolean flg1 = str1.startsWith("abc",2);
+        System.out.println(flg1);
+        flg1 = str1.endsWith("abc");
+        System.out.println(flg1);
     }
     public static void main4(String[] args) {
         String str1 = "       abs   dab da bh  ";
